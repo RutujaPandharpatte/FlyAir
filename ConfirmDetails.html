@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Confirm Details</title>
+    <link href="assets/css/ConfirmDetails.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div>
+                    <a href="#">
+                        <picture>
+                            <img src="assets/images/Icons/arrow.png" class="img-fluid mt-4 ms-4" style="width: 3.5%;">
+                        </picture>
+                    </a>
+                </div>
+                <div class="card-body">
+                    
+                    <h2 class="title">Details</h2>
+
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">first name</label>
+                                <input class="input--style-4" id="fn" type="text" name="first_name" readonly>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">last name</label>
+                                <input class="input--style-4" id="ln" type="text" name="last_name" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Email</label>
+                                <input class="input--style-4" id="mlid" type="email" name="email" readonly>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Phone Number</label>
+                                <input class="input--style-4" id="pn" type="text" name="phone" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Date</label>
+                        <div class="input-group-icon">
+                            <input class="input--style-4 js-datepicker" type="text" name="birthday" readonly>
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Source</label>
+                                <input class="input--style-4" type="text" name="source" readonly>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Destination</label>
+                                <input class="input--style-4" type="text" name="destination" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button style="margin-top: 20px;" id="rzp-button1" onclick="paythebill()">Confirm & Pay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var fname = localStorage.getItem("firstname");
+        var lname = localStorage.getItem("lastname");
+        var emailId = localStorage.getItem("email");
+        var phoneNo = localStorage.getItem("mobno");
+
+        document.getElementById("fn").setAttribute('value', fname);
+        document.getElementById("ln").setAttribute('value', lname);
+        document.getElementById("mlid").setAttribute('value', emailId);
+        document.getElementById("pn").setAttribute('value', phoneNo);
+    </script>
+</body>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="assets/js/payment.js"></script>
+
+</html>

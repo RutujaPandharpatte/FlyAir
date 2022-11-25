@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Who is Flying?</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/WhoIsFlying.css">
+	<script>
+		function passValues() {
+			var fnm = document.getElementById("fname_id").value;
+			var lnm = document.getElementById("lname_id").value;
+			var eml = document.getElementById("email_id").value;
+			var phone = document.getElementById("telephone").value;
+			localStorage.setItem("firstname", fnm);
+			localStorage.setItem("lastname", lnm);
+			localStorage.setItem("email", eml);
+			localStorage.setItem("mobno", phone);
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container" id="container">
+
+		<div class="form-container sign-in-container">
+			<div>
+				<a href="#">
+					<picture>
+						<img src="assets/images/Icons/arrow.png" class="img-fluid mt-4 ms-4" style="width: 5%;">
+					</picture>
+				</a>
+			</div>
+			<div>
+				<form action="./ConfirmDetails.html" method="post" onsubmit="passValues();">
+					<h1>Details</h1>
+					<div class="mt-3 mb-4">
+						<input type="text" id="fname_id" placeholder="First Name" required>
+						<input type="text" id="lname_id" placeholder="Last Name" required>
+						<input type="email" id="email_id" placeholder="Email" required>
+						<input type="tel" id="telephone" pattern="[0-9]{10}" placeholder="Phone No." required>
+						<button class="shadow" style="margin-top: 20px;">Let's Go!</button>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<picture>
+						<img src="assets/images/Travels.jpg" class="img-fluid" style="border-radius: 5px;">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<footer>
+    <p>
+        Made with ❤️ by FlyAir
+	</p> 
+</footer> --->
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Passenger Details</title>
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			margin-top: 1%;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="mt-2 mb-4">
+		<input type="number" name="ele" id="elecnt" oninput="update();">
+	</div>
+	<div class="">
+		<div class="col-lg-12">
+			<div id="newinput" class="my-auto"></div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		function update() {
+			var cnt = document.getElementById("elecnt").value;
+			var container = document.getElementById("newinput");
+			// Remove every children it had before
+			while (container.hasChildNodes()) {
+				container.removeChild(container.lastChild);
+			}
+			for (let i = 1; i <= cnt; i++) {
+				newRowAdd =
+					'<div id="row"> <div class="input-group m-3">' +
+					'<div class="input-group-prepend">' +
+					'<input type="text" class="form-control m-input" placeholder="First Name"> </div>' +
+					'<div class="input-group-prepend" style="margin-left:25px;">' +
+					'<input type="text" class="form-control m-input" placeholder="Last Name"> </div> </div>' +
+					'<div class="input-group m-3">' +
+					'<div class="input-group-prepend">' +
+					'<select class="form-select" aria-label="Default select example">' +
+					'<option selected>Gender</option>' +
+					'<option value="1">Male</option>' +
+					'<option value="2">Female</option>' +
+					'<option value="3">Other</option>' +
+					'</select></div>' +
+					'<div class="input-group-prepend" style="margin-left:25px;">' +
+					'<button type="button" class="btn btn-primary">Submit</button> </div> </div>';
+
+				container.appendChild(document.createTextNode("Passenger " + (i)));
+				$('#newinput').append(newRowAdd);
+			}
+		}
+	</script>
+</body>
+
+</html>
